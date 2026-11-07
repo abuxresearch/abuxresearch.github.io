@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1f44">
+  <meta name="description" content="Explore Nexa Flow, Connect, and Insight: connected tools that help growing businesses work smarter.">
+  <title>Nexa Solutions — Flow, Connect, and Insight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0b1f44;
+      --blue: #3882f6;
+      --purple: #885cff;
+      --mint: #10b981;
+      --paper: #f5f7ff;
+      --white: #fff;
+      --muted: #52617a;
+      --line: #dfe6f2;
+      --container: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; color: var(--navy); background: var(--paper); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; border-radius: .6rem; color: var(--white); background: var(--navy); transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { position: sticky; z-index: 20; top: 0; display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .8rem max(1.25rem,calc((100vw - var(--container))/2)); border-bottom: 1px solid rgba(255,255,255,.1); color: var(--white); background: var(--navy); }
+    .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .55rem; color: inherit; font-family: "Plus Jakarta Sans",Inter,sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+    .brand-mark { width: 32px; color: #80aaff; }
+    .header-links { display: flex; align-items: center; gap: clamp(1rem,2.4vw,2rem); }
+    .header-links a { display: inline-flex; min-height: 44px; align-items: center; color: rgba(255,255,255,.82); font-size: .9rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+    .header-links a:hover,.header-links a[aria-current="page"] { color: #9fc2ff; }
+    .header-links .nav-cta { min-height: 44px; padding: .6rem 1rem; border-radius: 999px; color: var(--navy); background: var(--white); }
+    .header-links .nav-cta:hover { color: var(--white); background: var(--blue); }
+    .menu-toggle { display: none; width: 46px; height: 46px; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: var(--white); background: transparent; cursor: pointer; }
+    .menu-toggle svg { width: 21px; height: 21px; }
+    a:focus-visible,button:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .6rem; padding: .75rem 1.15rem; border: 1px solid transparent; border-radius: 999px; color: var(--white); background: var(--blue); font-size: .92rem; font-weight: 700; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .button:hover { background: var(--purple); box-shadow: 0 10px 24px rgba(56,130,246,.23); transform: translateY(-2px); }
+    .button svg { width: 18px; height: 18px; }
+    .eyebrow { margin: 0 0 .7rem; color: var(--blue); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1,h2,h3 { font-family: "Plus Jakarta Sans",Inter,sans-serif; }
+    .solutions-hero { position: relative; display: flex; min-height: 360px; flex-direction: column; justify-content: center; overflow: hidden; padding: 4.5rem max(1.25rem,calc((100vw - var(--container))/2)); color: var(--white); background: var(--navy); }
+    .solutions-hero::before,.solutions-hero::after { position: absolute; content: ""; pointer-events: none; }
+    .solutions-hero::before { top: -50%; right: 12%; width: min(45vw,540px); aspect-ratio: 1; border-radius: 50%; background: linear-gradient(145deg,rgba(56,130,246,.75),rgba(136,92,255,.85)); transform: rotate(38deg); }
+    .solutions-hero::after { top: 14%; right: 14%; width: min(40vw,480px); height: 82%; border: 1px solid rgba(255,255,255,.16); border-radius: 48% 52% 12% 88% / 35% 45% 55% 65%; transform: rotate(-23deg); }
+    .solutions-hero-inner { position: relative; z-index: 1; width: min(100%,var(--container)); margin: auto; }
+    .solutions-hero .eyebrow { color: #a7c7ff; }
+    .solutions-hero h1 { max-width: 650px; margin: 0; font-size: clamp(2.8rem,6vw,5rem); font-weight: 800; letter-spacing: -.075em; line-height: 1; }
+    .solutions-hero p:not(.eyebrow) { max-width: 570px; margin: 1rem 0 0; color: rgba(255,255,255,.8); font-size: clamp(1rem,1.5vw,1.15rem); }
+    .product-list { width: min(100% - 2.5rem,var(--container)); margin: 0 auto; }
+    .product-section { display: grid; min-height: 490px; grid-template-columns: minmax(0,1.02fr) minmax(0,.98fr); align-items: center; gap: clamp(2.5rem,6vw,5rem); padding: clamp(4rem,7vw,6rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 84px; }
+    .product-section:nth-child(even) .product-visual { order: 2; }
+    .product-copy { max-width: 510px; }
+    .product-copy .eyebrow { display: flex; align-items: center; gap: .55rem; }
+    .product-copy .eyebrow::before { width: 24px; height: 2px; content: ""; background: var(--mint); }
+    .product-copy h2 { margin: 0; font-size: clamp(2.3rem,4.2vw,3.8rem); font-weight: 800; letter-spacing: -.07em; line-height: 1.04; }
+    .product-copy > p:not(.eyebrow) { margin: 1rem 0 1.2rem; color: var(--muted); font-size: 1rem; }
+    .product-benefits { display: grid; gap: .55rem; margin: 0 0 1.6rem; padding: 0; list-style: none; }
+    .product-benefits li { display: flex; align-items: start; gap: .65rem; color: #334866; font-size: .9rem; }
+    .product-benefits li::before { display: grid; width: 20px; height: 20px; flex: 0 0 20px; place-items: center; margin-top: .13rem; border-radius: 50%; color: #087c57; background: #dff8ef; content: "✓"; font-size: .73rem; font-weight: 800; }
+    .product-visual { position: relative; display: grid; min-height: 330px; place-items: center; overflow: hidden; padding: 1.6rem; border: 1px solid rgba(11,31,68,.08); border-radius: 24px; background: linear-gradient(145deg,#eaf2ff,#f6f3ff 70%,#e9faf4); }
+    .product-visual::before { position: absolute; top: -30%; right: -15%; width: 70%; aspect-ratio: 1; border: 1px solid rgba(56,130,246,.12); border-radius: 50%; box-shadow: 0 0 0 24px rgba(56,130,246,.035),0 0 0 48px rgba(136,92,255,.025); content: ""; }
+    .visual-caption { position: absolute; right: 1rem; bottom: .7rem; left: 1rem; margin: 0; color: #6f7f97; font-size: .68rem; text-align: center; }
+    .workflow-board { position: relative; z-index: 1; width: min(100%,420px); padding: 1rem; border: 1px solid rgba(11,31,68,.08); border-radius: 18px; background: rgba(255,255,255,.94); box-shadow: 0 18px 50px rgba(11,31,68,.12); }
+    .workflow-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .15rem .2rem .85rem; border-bottom: 1px solid #e9eef7; }
+    .workflow-heading strong { font-family: "Plus Jakarta Sans",Inter,sans-serif; font-size: .78rem; }.workflow-heading span { color: #8491a5; font-size: .63rem; }
+    .workflow-track { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .55rem; margin-top: 1.1rem; }
+    .workflow-track::before { position: absolute; top: 29px; right: 13%; left: 13%; height: 2px; background: linear-gradient(90deg,var(--blue),var(--purple),var(--mint)); content: ""; }
+    .workflow-step { position: relative; z-index: 1; display: grid; justify-items: center; gap: .55rem; color: #485975; text-align: center; }
+    .workflow-step span { display: grid; width: 56px; height: 56px; place-items: center; border: 1px solid #dfe8f7; border-radius: 16px; color: var(--blue); background: var(--white); box-shadow: 0 6px 15px rgba(11,31,68,.07); }
+    .workflow-step:nth-child(2) span { color: var(--purple); }.workflow-step:nth-child(3) span { color: #087c57; background: #edfbf6; }
+    .workflow-step svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .workflow-step small { font-size: .62rem; font-weight: 650; }
+    .workflow-status { display: flex; align-items: center; gap: .55rem; margin-top: 1.2rem; padding: .65rem .75rem; border-radius: 9px; color: #27604e; background: #eaf9f3; font-size: .66rem; }
+    .workflow-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); }
+    .chat-board { position: relative; z-index: 1; display: grid; width: min(100%,390px); gap: .8rem; padding: 1rem; border: 1px solid rgba(11,31,68,.08); border-radius: 20px; background: var(--white); box-shadow: 0 18px 50px rgba(11,31,68,.12); }
+    .chat-top { display: flex; align-items: center; gap: .65rem; padding-bottom: .7rem; border-bottom: 1px solid #edf0f7; }
+    .chat-avatar { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; color: #5940b4; background: #eee9ff; font-size: .65rem; font-weight: 700; }
+    .chat-top strong,.chat-top small { display: block; }.chat-top strong { font-size: .74rem; }.chat-top small { color: #8390a3; font-size: .59rem; }
+    .chat-message { max-width: 84%; padding: .7rem .8rem; border-radius: 12px 12px 12px 3px; color: #3c4d67; background: #edf4ff; font-size: .69rem; line-height: 1.5; animation: message-in .45s ease both; }
+    .chat-message:nth-of-type(3) { justify-self: end; border-radius: 12px 12px 3px 12px; color: #fff; background: var(--blue); animation-delay: .12s; }
+    .chat-message:nth-of-type(4) { animation-delay: .22s; }
+    @keyframes message-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+    .chat-composer { display: flex; min-height: 38px; align-items: center; justify-content: space-between; padding: .45rem .65rem; border: 1px solid #e8edf5; border-radius: 999px; color: #9aa4b5; font-size: .62rem; }
+    .chat-composer span:last-child { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; color: #fff; background: var(--blue); font-size: .7rem; }
+    .insight-board { position: relative; z-index: 1; width: min(100%,430px); padding: 1rem; border: 1px solid rgba(11,31,68,.08); border-radius: 18px; background: var(--white); box-shadow: 0 18px 50px rgba(11,31,68,.12); }
+    .insight-board-header { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .8rem; border-bottom: 1px solid #edf0f7; }
+    .insight-board-header strong,.insight-board-header small { display: block; }.insight-board-header strong { font-size: .76rem; }.insight-board-header small { margin-top: .15rem; color: #8792a5; font-size: .58rem; }
+    .insight-board-header span { align-self: center; padding: .3rem .5rem; border-radius: 6px; color: #64728a; background: #f3f6fb; font-size: .56rem; }
+    .insight-overview { display: grid; grid-template-columns: 1fr 110px; gap: .8rem; margin-top: .9rem; }
+    .insight-chart { display: flex; height: 142px; align-items: end; justify-content: space-around; gap: .4rem; padding: .7rem .5rem 1.2rem; border-bottom: 1px solid #e7edf5; background: repeating-linear-gradient(to bottom,transparent 0,transparent 34px,#eff3f8 35px); }
+    .insight-chart span { width: 12%; height: var(--height); border-radius: 5px 5px 0 0; background: linear-gradient(180deg,var(--blue),#9ec6ff); transform-origin: bottom; animation: insight-rise .7s ease both; }
+    .insight-chart span:nth-child(3n) { background: linear-gradient(180deg,var(--purple),#c7b5ff); }.insight-chart span:nth-child(2) { animation-delay: .08s; }.insight-chart span:nth-child(3) { animation-delay: .16s; }.insight-chart span:nth-child(4) { animation-delay: .24s; }.insight-chart span:nth-child(5) { animation-delay: .32s; }.insight-chart span:nth-child(6) { animation-delay: .4s; }
+    @keyframes insight-rise { from { transform: scaleY(.1); } to { transform: scaleY(1); } }
+    .insight-summary { display: grid; align-content: start; gap: .55rem; }
+    .insight-summary span { display: block; padding: .55rem; border: 1px solid #edf0f7; border-radius: 9px; color: #68758a; font-size: .55rem; }
+    .insight-summary strong { display: block; margin-top: .2rem; color: var(--navy); font-size: .66rem; }
+    .insight-board-note { margin: .55rem 0 0; color: #8290a4; font-size: .59rem; }
+    .closing-cta { position: relative; overflow: hidden; padding: clamp(3.5rem,8vw,6rem) 1.25rem; color: var(--white); background: var(--navy); }
+    .closing-cta::after { position: absolute; top: -65%; right: -5%; width: min(60vw,650px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; box-shadow: 0 0 0 36px rgba(255,255,255,.035),0 0 0 72px rgba(255,255,255,.025); content: ""; pointer-events: none; }
+    .closing-inner { position: relative; z-index: 1; width: min(100%,var(--container)); margin: auto; }
+    .closing-inner .eyebrow { color: #a7c7ff; }.closing-inner h2 { max-width: 700px; margin: 0; font-size: clamp(2.1rem,4.4vw,3.8rem); font-weight: 800; letter-spacing: -.06em; line-height: 1.06; }
+    .closing-inner p:not(.eyebrow) { max-width: 570px; margin: .8rem 0 1.6rem; color: rgba(255,255,255,.78); }
+    .site-footer { display: flex; min-height: 96px; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem max(1.25rem,calc((100vw - var(--container))/2)); color: rgba(255,255,255,.72); background: #071832; }
+    .footer-brand { color: var(--white); font-size: 1rem; }.footer-brand .brand-mark { width: 25px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }.footer-links a { display: inline-flex; min-height: 44px; align-items: center; color: var(--white); font-size: .8rem; font-weight: 600; text-decoration: none; }.footer-links a:hover { color: #9fc2ff; }
+    .copyright { color: rgba(255,255,255,.55); font-size: .72rem; }
+    html.js-motion .reveal:not(.is-visible) { opacity: 0; transform: translateY(18px); }.reveal { transition: opacity .55s ease,transform .55s ease; }
+    @media (max-width: 820px) {
+      .solutions-hero { min-height: 320px; }.solutions-hero::before { right: -8%; width: 52vw; }.solutions-hero::after { right: -6%; }
+      .product-section { min-height: 0; grid-template-columns: minmax(0,1fr) minmax(0,.95fr); gap: 1.6rem; }
+      .product-visual { min-height: 300px; padding: 1rem; }.workflow-board,.chat-board,.insight-board { padding: .8rem; }
+    }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 74px; }
+      .site-header { min-height: 68px; padding-inline: 1rem; }.menu-toggle { display: grid; }
+      .header-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: .5rem 1rem 1rem; border-bottom: 1px solid rgba(255,255,255,.12); background: var(--navy); box-shadow: 0 16px 24px rgba(11,31,68,.2); }
+      .header-links.is-open { display: grid; }.header-links a { min-height: 48px; padding-inline: .25rem; }.header-links .nav-cta { justify-content: center; margin-top: .5rem; color: var(--navy); background: var(--white); }
+      .solutions-hero { min-height: 310px; padding: 3.5rem 1.25rem; }.solutions-hero::before { top: -8%; right: -20%; width: 75vw; opacity: .7; }.solutions-hero::after { top: 20%; right: -18%; width: 70vw; height: 72%; }
+      .product-list { width: min(100% - 2rem,var(--container)); }
+      .product-section { grid-template-columns: 1fr; gap: 1.5rem; padding: 3.5rem 0; }
+      .product-section:nth-child(even) .product-visual { order: initial; }.product-section:nth-child(even) .product-copy { order: 1; }
+      .product-copy h2 { font-size: clamp(2.25rem,10vw,3rem); }.product-copy > p:not(.eyebrow) { font-size: .95rem; }
+      .product-visual { min-height: 290px; }.workflow-board { padding: .9rem; }.workflow-step span { width: 50px; height: 50px; }.workflow-track::before { top: 26px; }
+      .site-footer { flex-direction: column; justify-content: center; gap: .7rem; padding: 1.2rem 1rem; text-align: center; }.footer-links { justify-content: center; gap: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html.js-motion .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="websiteb.html" aria-label="Nexa home"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 31V9l24 22V9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="9" r="3" fill="#885cff"/><circle cx="32" cy="31" r="3" fill="#10b981"/></svg><span>Nexa</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="header-links" id="primary-navigation" aria-label="Main navigation"><a href="websiteb.html">Home</a><a href="ServicesB.html" aria-current="page">Solutions</a><a href="aboutB.html">About</a><a class="nav-cta" href="#flow">Get Started <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main-content">
+    <section class="solutions-hero" id="solutions" aria-labelledby="solutions-title">
+      <div class="solutions-hero-inner reveal">
+        <p class="eyebrow">Connected tools for growing teams</p>
+        <h1 id="solutions-title">Nexa Solutions</h1>
+        <p>Powerful, easy-to-use tools that help your business work smarter, not harder.</p>
+      </div>
+    </section>
+
+    <div class="product-list">
+      <section class="product-section" id="flow" aria-labelledby="flow-title">
+        <div class="product-visual reveal" role="img" aria-label="Conceptual workflow illustration showing a task moving through calendar, communication, and completion steps.">
+          <div class="workflow-board" aria-hidden="true">
+            <div class="workflow-heading"><strong>A simple workflow</strong><span>Illustrative preview</span></div>
+            <div class="workflow-track">
+              <div class="workflow-step"><span><svg viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M9 3v6m10-6v6M4 12h20M9 16h3m-3 4h7"/></svg></span><small>Organize</small></div>
+              <div class="workflow-step"><span><svg viewBox="0 0 28 28"><rect x="3" y="6" width="22" height="16" rx="3"/><path d="m4 8 10 8 10-8"/></svg></span><small>Coordinate</small></div>
+              <div class="workflow-step"><span><svg viewBox="0 0 28 28"><path d="m5 14 6 6L23 7"/></svg></span><small>Complete</small></div>
+            </div>
+            <div class="workflow-status"><i></i><span>Keep recurring work moving, step by step.</span></div>
+          </div>
+          <p class="visual-caption">Conceptual illustration of an organized workflow.</p>
+        </div>
+        <div class="product-copy reveal">
+          <p class="eyebrow">01 / Nexa Flow</p>
+          <h2 id="flow-title">More time for meaningful work.</h2>
+          <p>Organize recurring tasks, streamline simple workflows, and automate routine administrative processes—all in one clear place.</p>
+          <ul class="product-benefits"><li>Automate everyday tasks</li><li>Reduce manual work and repeated steps</li><li>Focus on meaningful work</li></ul>
+          <a class="button" href="#connect">Explore Connect <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </section>
+
+      <section class="product-section" id="connect" aria-labelledby="connect-title">
+        <div class="product-visual reveal" role="img" aria-label="Conceptual team conversation illustration with a shared update and two replies.">
+          <div class="chat-board" aria-hidden="true">
+            <div class="chat-top"><span class="chat-avatar">N</span><span><strong>Team updates</strong><small>One shared space</small></span></div>
+            <div class="chat-message">The project notes and latest update are together here.</div>
+            <div class="chat-message">Great, now everyone can find the same information.</div>
+            <div class="chat-message">I’ve added the next steps for the team to review.</div>
+            <div class="chat-composer"><span>Write a message...</span><span aria-hidden="true">↑</span></div>
+          </div>
+          <p class="visual-caption">Conceptual conversation—not a live product screenshot.</p>
+        </div>
+        <div class="product-copy reveal">
+          <p class="eyebrow">02 / Nexa Connect</p>
+          <h2 id="connect-title">Bring your team together.</h2>
+          <p>Give updates, conversations, and shared information a central home, so people can find what they need and stay connected to the work.</p>
+          <ul class="product-benefits"><li>Keep teams aligned</li><li>Access important information more easily</li><li>Improve collaboration</li></ul>
+          <a class="button" href="#insight">Explore Insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </section>
+
+      <section class="product-section" id="insight" aria-labelledby="insight-title">
+        <div class="product-visual reveal" role="img" aria-label="Illustrative operations chart and summary categories showing how information can be organized for review.">
+          <div class="insight-board" aria-hidden="true">
+            <div class="insight-board-header"><span><strong>Operations overview</strong><small>A conceptual summary view</small></span><span>Illustration</span></div>
+            <div class="insight-overview">
+              <div class="insight-chart"><span style="--height:38%"></span><span style="--height:55%"></span><span style="--height:48%"></span><span style="--height:72%"></span><span style="--height:63%"></span><span style="--height:88%"></span></div>
+              <div class="insight-summary"><span>Workload<strong>Team activity</strong></span><span>Progress<strong>Current priorities</strong></span><span>Patterns<strong>Trends to review</strong></span></div>
+            </div>
+            <p class="insight-board-note">Illustrative categories only—not measured business data.</p>
+          </div>
+          <p class="visual-caption">Conceptual chart and summary illustration.</p>
+        </div>
+        <div class="product-copy reveal">
+          <p class="eyebrow">03 / Nexa Insight</p>
+          <h2 id="insight-title">Understand the bigger picture.</h2>
+          <p>Turn key business information into easy-to-understand summaries that help managers notice trends and make informed decisions.</p>
+          <ul class="product-benefits"><li>Identify meaningful trends</li><li>Make informed decisions</li><li>Plan for what comes next</li></ul>
+          <a class="button" href="aboutB.html">About Nexa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="closing-cta" aria-labelledby="closing-title">
+      <div class="closing-inner reveal">
+        <p class="eyebrow">Find your clearer way forward</p>
+        <h2 id="closing-title">Ready to see Nexa in action?</h2>
+        <p>Explore the solutions and find the right place to start for your team.</p>
+        <a class="button" href="websiteb.html#solutions">Explore Our Solutions <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="websiteb.html" aria-label="Nexa home"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 31V9l24 22V9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="9" r="3" fill="#885cff"/><circle cx="32" cy="31" r="3" fill="#10b981"/></svg><span>Nexa</span></a>
+    <nav class="footer-links" aria-label="Footer navigation"><a href="websiteb.html">Home</a><a href="ServicesB.html" aria-current="page">Solutions</a><a href="aboutB.html">About</a><a href="index.html">Return to Study</a></nav>
+    <span class="copyright">© 2026 Nexa. All rights reserved.</span>
+  </footer>
+  <script>
+    (() => {
+      const menuButton = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#primary-navigation");
+      if (menuButton && navigation) {
+        const closeMenu = () => {
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open navigation menu");
+          navigation.classList.remove("is-open");
+        };
+        menuButton.addEventListener("click", () => {
+          const isOpen = menuButton.getAttribute("aria-expanded") !== "true";
+          menuButton.setAttribute("aria-expanded", String(isOpen));
+          menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+          navigation.classList.toggle("is-open", isOpen);
+        });
+        navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+            closeMenu();
+            menuButton.focus();
+          }
+        });
+      }
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const revealItems = document.querySelectorAll(".reveal");
+      if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+      document.documentElement.classList.add("js-motion");
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: .12 });
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
+</body>
+</html>
