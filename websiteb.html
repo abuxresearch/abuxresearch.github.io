@@ -3,353 +3,148 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1f44">
-  <meta name="description" content="Nexa connects simple digital tools to help growing businesses streamline daily operations.">
-  <title>Nexa — Simplify Work. Grow Faster.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --navy: #0b1f44;
-      --blue: #3882f6;
-      --purple: #885cff;
-      --mint: #10b981;
-      --paper: #f5f7ff;
-      --white: #fff;
-      --muted: #52617a;
-      --line: #dfe6f2;
-      --container: 1160px;
-      --shadow: 0 24px 70px rgba(11,31,68,.12);
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body { margin: 0; color: var(--navy); background: var(--paper); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; }
-    button { font: inherit; }
-    .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; border-radius: .6rem; color: var(--white); background: var(--navy); transform: translateY(-160%); }
-    .skip-link:focus { transform: translateY(0); }
-    .site-header { position: sticky; z-index: 20; top: 0; display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .8rem max(1.25rem, calc((100vw - var(--container))/2)); border-bottom: 1px solid rgba(11,31,68,.07); background: rgba(245,247,255,.92); backdrop-filter: blur(16px); }
-    .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .55rem; color: var(--navy); font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
-    .brand-mark { width: 32px; color: var(--blue); }
-    .header-links { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); }
-    .header-links a { display: inline-flex; min-height: 44px; align-items: center; color: var(--navy); font-size: .9rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
-    .header-links a:hover, .header-links a[aria-current="page"] { color: var(--blue); }
-    .header-links .nav-cta { min-height: 44px; padding: .6rem 1rem; border-radius: 999px; color: var(--white); background: var(--navy); }
-    .header-links .nav-cta:hover { color: var(--white); background: var(--blue); }
-    .menu-toggle { display: none; width: 46px; height: 46px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--navy); background: var(--white); cursor: pointer; }
-    .menu-toggle svg { width: 21px; height: 21px; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .65rem; padding: .75rem 1.15rem; border: 1px solid transparent; border-radius: 999px; color: var(--white); background: var(--navy); font-size: .92rem; font-weight: 700; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
-    .button:hover { background: var(--blue); box-shadow: 0 10px 24px rgba(56,130,246,.23); transform: translateY(-2px); }
-    .button svg { width: 18px; height: 18px; }
-    .button-light { color: var(--navy); background: var(--white); }
-    .button-light:hover { color: var(--white); background: var(--blue); }
-    .eyebrow { margin: 0 0 .7rem; color: var(--blue); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    h1, h2, h3 { font-family: "Plus Jakarta Sans", Inter, sans-serif; }
-    .hero-home { display: grid; width: min(100% - 2.5rem, var(--container)); min-height: 620px; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); align-items: center; gap: clamp(2.5rem, 6vw, 5rem); margin: 0 auto; padding: 4.5rem 0 5.5rem; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero-copy .eyebrow { display: inline-flex; align-items: center; gap: .5rem; }
-    .hero-copy .eyebrow::before { width: 24px; height: 2px; content: ""; background: var(--mint); }
-    .hero-copy h1 { max-width: 570px; margin: 0; font-size: clamp(3.2rem, 6.2vw, 5.7rem); font-weight: 800; letter-spacing: -.075em; line-height: .99; }
-    .hero-copy h1 span { color: var(--blue); }
-    .hero-copy > p:not(.eyebrow) { max-width: 470px; margin: 1.35rem 0 1.8rem; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
-    .hero-proof { display: flex; align-items: center; gap: .75rem; margin-top: 1.5rem; color: var(--muted); font-size: .78rem; }
-    .hero-proof-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 5px rgba(16,185,129,.12); }
-    .dashboard-visual { position: relative; min-width: 0; padding: 1.5rem 0 1.5rem 1rem; }
-    .dashboard-orb { position: absolute; z-index: -1; top: 5%; right: 3%; width: 84%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(140deg, rgba(56,130,246,.14), rgba(136,92,255,.13) 65%, rgba(16,185,129,.12)); }
-    .dashboard-window { position: relative; overflow: hidden; border: 1px solid rgba(11,31,68,.1); border-radius: 24px; background: var(--white); box-shadow: var(--shadow); transform: rotate(1deg); }
-    .dashboard-topbar { display: flex; height: 56px; align-items: center; justify-content: space-between; padding: 0 1.1rem; border-bottom: 1px solid #edf0f7; }
-    .dashboard-topbar strong { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: .9rem; letter-spacing: -.03em; }
-    .dashboard-dots { display: flex; gap: 5px; }
-    .dashboard-dots i { width: 7px; height: 7px; border-radius: 50%; background: #dce5f3; }
-    .dashboard-dots i:first-child { background: var(--blue); }
-    .dashboard-user { display: flex; align-items: center; gap: .45rem; color: var(--muted); font-size: .65rem; }
-    .dashboard-avatar { display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; color: var(--navy); background: #e7efff; font-size: .65rem; font-weight: 700; }
-    .dashboard-body { display: grid; grid-template-columns: 128px minmax(0,1fr); min-height: 342px; }
-    .dashboard-side { padding: 1.05rem .75rem; border-right: 1px solid #edf0f7; background: #fbfcff; }
-    .dashboard-side span { display: flex; min-height: 36px; align-items: center; gap: .55rem; padding: 0 .55rem; border-radius: 8px; color: #78859b; font-size: .65rem; }
-    .dashboard-side span::before { width: 13px; height: 13px; border: 1.5px solid currentColor; border-radius: 4px; content: ""; }
-    .dashboard-side span:first-child { color: var(--blue); background: #edf4ff; font-weight: 700; }
-    .dashboard-main { min-width: 0; padding: 1.1rem; }
-    .dashboard-heading { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
-    .dashboard-heading h2 { margin: 0; font-size: 1rem; font-weight: 700; letter-spacing: -.04em; }
-    .dashboard-heading p { margin: .25rem 0 0; color: #8792a5; font-size: .65rem; }
-    .dashboard-period { padding: .35rem .55rem; border: 1px solid #e8edf5; border-radius: 7px; color: #68758a; font-size: .6rem; white-space: nowrap; }
-    .dashboard-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .6rem; margin: 1rem 0; }
-    .dashboard-stat { min-width: 0; padding: .7rem; border: 1px solid #edf0f7; border-radius: 11px; }
-    .dashboard-stat small { display: block; color: #8792a5; font-size: .56rem; }
-    .dashboard-stat strong { display: block; margin-top: .25rem; color: var(--navy); font-size: .92rem; letter-spacing: -.04em; }
-    .dashboard-stat strong i { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: var(--mint); }
-    .dashboard-chart { position: relative; min-height: 155px; padding: .8rem; border: 1px solid #edf0f7; border-radius: 12px; }
-    .dashboard-chart-title { display: flex; justify-content: space-between; color: #7d899d; font-size: .62rem; }
-    .chart-bars { display: flex; height: 106px; align-items: end; justify-content: space-around; gap: 7px; padding: 12px 8px 0; border-bottom: 1px solid #e8edf5; background: repeating-linear-gradient(to bottom,transparent 0,transparent 25px,#f0f3f8 26px); }
-    .chart-bars i { width: 9%; height: var(--bar); border-radius: 5px 5px 0 0; background: linear-gradient(180deg,var(--blue),#81b5ff); transform-origin: bottom; animation: bar-rise .7s ease both; }
-    .chart-bars i:nth-child(3n) { background: linear-gradient(180deg,var(--purple),#b5a0ff); }
-    .chart-bars i:nth-child(2) { animation-delay: .08s; }.chart-bars i:nth-child(3) { animation-delay: .16s; }.chart-bars i:nth-child(4) { animation-delay: .24s; }.chart-bars i:nth-child(5) { animation-delay: .32s; }.chart-bars i:nth-child(6) { animation-delay: .4s; }.chart-bars i:nth-child(7) { animation-delay: .48s; }
-    @keyframes bar-rise { from { transform: scaleY(.1); } to { transform: scaleY(1); } }
-    .chart-labels { display: flex; justify-content: space-between; padding-top: .35rem; color: #9aa4b5; font-size: .53rem; }
-    .dashboard-note { position: absolute; right: -1rem; bottom: 3.2rem; display: flex; align-items: center; gap: .7rem; padding: .85rem 1rem; border: 1px solid rgba(11,31,68,.08); border-radius: 14px; background: var(--white); box-shadow: 0 12px 32px rgba(11,31,68,.12); }
-    .note-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #07875d; background: #e6faf3; font-size: 1.1rem; font-weight: 800; }
-    .dashboard-note strong, .dashboard-note small { display: block; }.dashboard-note strong { font-size: .7rem; }.dashboard-note small { color: #8390a3; font-size: .58rem; }
-    .visual-caption { margin: .6rem 0 0; color: #7d899d; font-size: .68rem; text-align: center; }
-    .section { padding: clamp(4.5rem, 8vw, 7rem) 1.25rem; }
-    .section-inner { width: min(100%, var(--container)); margin: 0 auto; }
-    .section-heading { max-width: 690px; margin: 0 auto 2.4rem; text-align: center; }
-    .section-heading h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; letter-spacing: -.065em; line-height: 1.08; }
-    .section-heading > p:not(.eyebrow) { margin: .85rem auto 0; color: var(--muted); }
-    .challenge-section { background: var(--white); }
-    .challenge-visual { display: grid; grid-template-columns: minmax(0,1fr) 82px minmax(0,1fr); align-items: center; gap: clamp(1rem, 3vw, 2rem); margin: 2.5rem auto 1.2rem; }
-    .challenge-card { min-height: 230px; padding: clamp(1.25rem,3vw,2rem); border: 1px solid var(--line); border-radius: 20px; background: #fff; }
-    .challenge-card h3 { margin: 0 0 .5rem; font-size: 1rem; letter-spacing: -.03em; }
-    .challenge-card > p { margin: 0; color: var(--muted); font-size: .86rem; }
-    .challenge-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.3rem; }
-    .challenge-chip { padding: .42rem .65rem; border: 1px solid #e7ecf5; border-radius: 999px; color: #69768c; background: #fafbfe; font-size: .7rem; }
-    .challenge-chip:nth-child(2) { color: #7251d8; background: #f5f1ff; }.challenge-chip:nth-child(3) { color: #1678d7; background: #eef6ff; }
-    .challenge-mess { position: relative; width: 75px; height: 72px; margin: 1.3rem auto 0; }
-    .challenge-mess span { position: absolute; width: 25px; height: 25px; border: 2px solid #64748b; border-radius: 7px; background: #f5f7ff; transform: rotate(var(--rotate)); }
-    .challenge-mess span:nth-child(1) { top: 0; left: 22px; --rotate: 19deg; }.challenge-mess span:nth-child(2) { top: 22px; left: 3px; --rotate: -22deg; }.challenge-mess span:nth-child(3) { top: 20px; right: 0; --rotate: 35deg; }.challenge-mess span:nth-child(4) { bottom: 0; left: 25px; --rotate: -13deg; }
-    .challenge-arrow { width: 70px; color: var(--blue); }
-    .challenge-check { display: grid; width: 68px; height: 68px; place-items: center; margin: 1.2rem auto 0; border-radius: 50%; color: var(--white); background: var(--blue); box-shadow: 0 0 0 10px #eaf2ff; font-size: 2rem; font-weight: 600; }
-    .challenge-summary { max-width: 650px; margin: 1.8rem auto 0; color: var(--muted); text-align: center; }
-    .solutions-section { background: linear-gradient(180deg,#f5f7ff,#edf3ff); }
-    .solution-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.1rem; }
-    .solution-card { display: flex; min-height: 275px; flex-direction: column; padding: 1.5rem; border: 1px solid rgba(11,31,68,.09); border-radius: 18px; color: var(--navy); background: var(--white); box-shadow: 0 10px 32px rgba(11,31,68,.045); text-decoration: none; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
-    .solution-card:hover { border-color: rgba(56,130,246,.35); box-shadow: 0 20px 46px rgba(11,31,68,.12); transform: translateY(-5px); }
-    .solution-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 15px; color: var(--blue); background: #edf4ff; }
-    .solution-card:nth-child(2) .solution-icon { color: var(--purple); background: #f3efff; }.solution-card:nth-child(3) .solution-icon { color: #07875d; background: #e8faf4; }
-    .solution-icon svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .solution-card h3 { margin: 1.05rem 0 .35rem; font-size: 1.15rem; font-weight: 700; letter-spacing: -.04em; }
-    .solution-card p { margin: 0; color: var(--muted); font-size: .86rem; }
-    .solution-benefit { display: flex; align-items: start; gap: .45rem; margin-top: .8rem !important; color: #334866 !important; font-size: .76rem !important; font-weight: 600; }
-    .solution-benefit::before { margin-top: .16rem; color: var(--mint); content: "✓"; font-weight: 800; }
-    .learn-link { display: inline-flex; align-items: center; gap: .45rem; margin-top: auto; padding-top: 1.15rem; color: var(--blue); font-size: .82rem; font-weight: 700; }
-    .learn-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
-    .solution-card:hover .learn-link svg { transform: translateX(4px); }
-    .closing-cta { position: relative; overflow: hidden; padding: clamp(3.5rem,8vw,6.2rem) 1.25rem; color: var(--white); background: var(--navy); }
-    .closing-cta::after { position: absolute; top: -65%; right: -5%; width: min(60vw,650px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; box-shadow: 0 0 0 36px rgba(255,255,255,.035),0 0 0 72px rgba(255,255,255,.025); content: ""; pointer-events: none; }
-    .closing-inner { position: relative; z-index: 1; width: min(100%,var(--container)); margin: auto; }
-    .closing-inner h2 { max-width: 650px; margin: 0; font-size: clamp(2.1rem,4.4vw,3.8rem); font-weight: 800; letter-spacing: -.06em; line-height: 1.06; }
-    .closing-inner p { max-width: 550px; margin: .8rem 0 1.6rem; color: rgba(255,255,255,.78); }
-    .site-footer { display: flex; min-height: 96px; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem max(1.25rem,calc((100vw - var(--container))/2)); color: rgba(255,255,255,.72); background: #071832; }
-    .footer-brand { color: var(--white); font-size: 1rem; }.footer-brand .brand-mark { width: 25px; color: #80aaff; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
-    .footer-links a { display: inline-flex; min-height: 44px; align-items: center; color: var(--white); font-size: .8rem; font-weight: 600; text-decoration: none; }.footer-links a:hover { color: #9fc2ff; }
-    .copyright { color: rgba(255,255,255,.55); font-size: .72rem; }
-    html.js-motion .reveal:not(.is-visible) { opacity: 0; transform: translateY(18px); }
-    .reveal { transition: opacity .55s ease, transform .55s ease; }
-    @media (max-width: 900px) {
-      .hero-home { min-height: 570px; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 1.5rem; }
-      .dashboard-body { grid-template-columns: 95px minmax(0,1fr); }
-      .dashboard-side { padding-inline: .5rem; }
-      .dashboard-main { padding: .85rem; }
-      .dashboard-stats { gap: .35rem; }.dashboard-stat { padding: .55rem; }
-      .challenge-visual { grid-template-columns: minmax(0,1fr) 56px minmax(0,1fr); }
-      .challenge-arrow { width: 54px; }
-    }
-    @media (max-width: 700px) {
-      html { scroll-padding-top: 74px; }
-      .site-header { min-height: 68px; padding-inline: 1rem; }
-      .menu-toggle { display: grid; }
-      .header-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: .5rem 1rem 1rem; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 16px 24px rgba(11,31,68,.08); }
-      .header-links.is-open { display: grid; }
-      .header-links a { min-height: 48px; padding-inline: .25rem; }.header-links .nav-cta { justify-content: center; margin-top: .5rem; }
-      .hero-home { width: min(100% - 2rem, var(--container)); min-height: auto; grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 0 3.5rem; }
-      .hero-copy h1 { max-width: 500px; font-size: clamp(3rem,12vw,4.5rem); }
-      .hero-copy > p:not(.eyebrow) { margin: 1rem 0 1.3rem; }
-      .dashboard-visual { width: min(100%,560px); justify-self: center; padding: .5rem .3rem 1.2rem; }
-      .dashboard-window { border-radius: 17px; }.dashboard-topbar { height: 48px; padding-inline: .75rem; }
-      .dashboard-body { grid-template-columns: 70px minmax(0,1fr); min-height: 290px; }
-      .dashboard-side span { min-height: 34px; gap: .3rem; padding-inline: .35rem; font-size: .54rem; }
-      .dashboard-side span::before { width: 10px; height: 10px; }
-      .dashboard-main { padding: .7rem; }.dashboard-heading h2 { font-size: .85rem; }.dashboard-heading p { font-size: .56rem; }
-      .dashboard-period { padding: .28rem .4rem; font-size: .52rem; }.dashboard-stats { gap: .3rem; margin: .75rem 0; }
-      .dashboard-stat { padding: .48rem; }.dashboard-stat small { font-size: .48rem; }.dashboard-stat strong { font-size: .72rem; }
-      .dashboard-chart { min-height: 130px; padding: .55rem; }.chart-bars { height: 82px; gap: 4px; }
-      .dashboard-note { right: -.2rem; bottom: 2rem; padding: .6rem .7rem; }.note-icon { width: 28px; height: 28px; }
-      .dashboard-note strong { font-size: .61rem; }.dashboard-note small { font-size: .52rem; }
-      .section { padding: 4rem 1rem; }.section-heading { margin-bottom: 1.8rem; }
-      .challenge-visual { grid-template-columns: 1fr; gap: .85rem; }.challenge-card { min-height: 0; }.challenge-arrow { width: 42px; transform: rotate(90deg); }
-      .challenge-mess { margin-top: 1rem; }.challenge-check { margin-top: 1rem; }
-      .solution-grid { grid-template-columns: 1fr; gap: .85rem; }.solution-card { min-height: 0; padding: 1.25rem; }
-      .closing-inner h2 { font-size: clamp(2rem,9vw,3rem); }
-      .site-footer { flex-direction: column; justify-content: center; gap: .7rem; padding: 1.2rem 1rem; text-align: center; }
-      .footer-links { justify-content: center; gap: 1rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      html.js-motion .reveal:not(.is-visible) { opacity: 1; transform: none; }
-    }
-  </style>
+  <meta name="theme-color" content="#f7f4ec">
+  <meta name="description" content="Run your business, not your tools. Nexa brings connected, accessible tools to help growing teams work simply.">
+  <title>Nexa — Run your business, not your tools</title>
+  <link rel="stylesheet" href="websiteb.css">
+  <script src="websiteb.js" defer></script>
 </head>
 <body>
+  <svg class="svg-library" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="nexa-mark" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="8" fill="#1f5e63"/><path d="M8 23V9l16 14V8" fill="none" stroke="#f7f4ec" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="2.6" fill="#cde35a"/></symbol>
+    <symbol id="nexa-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/></symbol>
+    <symbol id="nexa-chat" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h8m-8 3h5"/></symbol>
+    <symbol id="nexa-trend" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 6-7m-5 0h5v5"/></symbol>
+    <symbol id="nexa-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="nexa-swap" viewBox="0 0 24 24"><path d="M16 3l4 4-4 4M4 7h16M8 21l-4-4 4-4m12 4H4"/></symbol>
+    <symbol id="nexa-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="nexa-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="m9 13 2 2 4-4"/></symbol>
+  </svg>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="websiteb.html" aria-label="Nexa home">
-      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M8 31V9l24 22V9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="8" cy="9" r="3" fill="#885cff"/><circle cx="32" cy="31" r="3" fill="#10b981"/>
-      </svg>
-      <span>Nexa</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav class="header-links" id="primary-navigation" aria-label="Main navigation">
-      <a href="websiteb.html" aria-current="page">Home</a>
-      <a href="ServicesB.html">Solutions</a>
-      <a href="aboutB.html">About</a>
-      <a class="nav-cta" href="ServicesB.html#solutions">Get Started <span aria-hidden="true">↗</span></a>
+    <div class="header-inner">
+      <a class="brand" href="websiteb.html" aria-label="Nexa home"><svg class="brand-mark" aria-hidden="true"><use href="#nexa-mark"/></svg><span class="brand-name">nexa</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="websiteb.html" aria-current="page">Home</a>
+        <a href="ServicesB.html">Solutions</a>
+        <a href="aboutB.html">About</a>
+      </nav>
+      <a class="header-action" href="ServicesB.html">Explore solutions <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><svg aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="websiteb.html" aria-current="page">Home <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+      <a href="ServicesB.html">Solutions <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+      <a href="aboutB.html">About <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+      <a href="ServicesB.html">Explore solutions <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
     </nav>
   </header>
   <main id="main-content">
-    <section class="hero-home" id="top" aria-labelledby="home-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Connected tools for growing teams</p>
-        <h1 id="home-title">Simplify Work.<br><span>Grow Faster.</span></h1>
-        <p>Nexa brings connected, easy-to-use digital tools together to help small and mid-sized businesses streamline daily operations.</p>
-        <a class="button" href="ServicesB.html#solutions">Explore Our Solutions
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
-        <div class="hero-proof"><span class="hero-proof-dot" aria-hidden="true"></span><span>One connected platform for everyday work</span></div>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Built for small &amp; mid-sized teams</p>
+        <h1 class="hero-title" id="hero-title">Run your business,<br><span>not your tools.</span></h1>
+        <p class="lead">Nexa makes connected, easy-to-use tools that take the busywork out of running a growing team — so you can spend less time managing work and more time doing it.</p>
+        <div class="hero-buttons">
+          <a class="button" href="ServicesB.html">Explore our solutions <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+          <a class="button button--outline" href="aboutB.html">Why Nexa <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+        </div>
+        <div class="hero-proof"><svg aria-hidden="true"><use href="#nexa-mark"/></svg><span>Connected tools. Clearer everyday work.</span></div>
       </div>
-      <div class="dashboard-visual reveal" role="img" aria-label="Conceptual Nexa dashboard showing a team workflow and an illustrative weekly activity chart.">
-        <div class="dashboard-orb" aria-hidden="true"></div>
-        <div class="dashboard-window" aria-hidden="true">
-          <div class="dashboard-topbar"><div class="dashboard-dots"><i></i><i></i><i></i></div><strong>Nexa workspace</strong><div class="dashboard-user"><span>Team space</span><span class="dashboard-avatar">N</span></div></div>
-          <div class="dashboard-body">
-            <div class="dashboard-side"><span>Overview</span><span>Workflows</span><span>Messages</span><span>Reports</span></div>
-            <div class="dashboard-main">
-              <div class="dashboard-heading"><div><h2>Good morning, team</h2><p>Here’s your workspace at a glance.</p></div><span class="dashboard-period">This week</span></div>
-              <div class="dashboard-stats">
-                <div class="dashboard-stat"><small>Workflows</small><strong><i></i>On track</strong></div>
-                <div class="dashboard-stat"><small>Team updates</small><strong>All in one place</strong></div>
-                <div class="dashboard-stat"><small>Insights</small><strong>Ready to explore</strong></div>
-              </div>
-              <div class="dashboard-chart"><div class="dashboard-chart-title"><span>Activity overview</span><span>Illustrative view</span></div><div class="chart-bars"><i style="--bar:34%"></i><i style="--bar:54%"></i><i style="--bar:46%"></i><i style="--bar:68%"></i><i style="--bar:58%"></i><i style="--bar:82%"></i><i style="--bar:72%"></i><i style="--bar:94%"></i></div><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div></div>
-            </div>
+      <div class="hub-visual reveal" role="img" aria-label="Diagram showing Nexa at the center, connected to Flow, Connect, and Insight.">
+        <svg class="hub-lines" viewBox="0 0 440 320" aria-hidden="true"><line x1="220" y1="160" x2="105" y2="68"/><line x1="220" y1="160" x2="344" y2="82"/><line x1="220" y1="160" x2="293" y2="264"/></svg>
+        <div class="hub-center" aria-hidden="true"><svg class="brand-mark"><use href="#nexa-mark"/></svg></div>
+        <div class="hub-chip hub-chip--flow" aria-hidden="true"><span class="product-icon product-icon--flow"><svg><use href="#nexa-repeat"/></svg></span>Flow</div>
+        <div class="hub-chip hub-chip--connect" aria-hidden="true"><span class="product-icon product-icon--connect"><svg><use href="#nexa-chat"/></svg></span>Connect</div>
+        <div class="hub-chip hub-chip--insight" aria-hidden="true"><span class="product-icon product-icon--insight"><svg><use href="#nexa-trend"/></svg></span>Insight</div>
+      </div>
+    </section>
+
+    <section class="problem-section" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">The problem</p>
+          <h2 id="problem-title">As teams grow, everyday work gets complicated.</h2>
+        </div>
+        <div class="problem-grid stagger">
+          <article class="problem-card reveal">
+            <svg aria-hidden="true"><use href="#nexa-swap"/></svg>
+            <h3>Too many tools</h3>
+            <p>Teams switch between disconnected apps just to get one thing done.</p>
+          </article>
+          <article class="problem-card reveal">
+            <svg aria-hidden="true"><use href="#nexa-clock"/></svg>
+            <h3>Repetitive admin</h3>
+            <p>Routine tasks quietly eat hours that should go to real work.</p>
+          </article>
+          <article class="problem-card reveal">
+            <svg aria-hidden="true"><use href="#nexa-folder"/></svg>
+            <h3>Lost information</h3>
+            <p>Important files and decisions get buried in threads and inboxes.</p>
+          </article>
+        </div>
+        <p class="problem-note reveal"><strong>Nexa brings it back together.</strong> One simple, connected set of tools — no technical expertise required.</p>
+      </div>
+    </section>
+
+    <section class="solution-preview" id="solutions" aria-labelledby="solutions-title">
+      <div class="container">
+        <div class="solution-preview-head reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Solutions</p>
+            <h2 id="solutions-title">Three tools. One connected system.</h2>
           </div>
+          <a class="button button--outline" href="ServicesB.html">Compare all three <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
         </div>
-        <div class="dashboard-note" aria-hidden="true"><span class="note-icon">✓</span><span><strong>Everything connected</strong><small>Work, conversations, and insight</small></span></div>
-        <p class="visual-caption">A conceptual preview—not live business data.</p>
-      </div>
-    </section>
-
-    <section class="section challenge-section" id="challenge" aria-labelledby="challenge-title">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <p class="eyebrow">The challenge</p>
-          <h2 id="challenge-title">Growing should feel exciting. Not complicated.</h2>
-          <p>As a business grows, managing communication, repetitive tasks, and important information can become increasingly complex.</p>
-        </div>
-        <div class="challenge-visual reveal">
-          <article class="challenge-card">
-            <h3>When everything is scattered</h3>
-            <p>Disconnected tools make simple work harder to keep track of.</p>
-            <div class="challenge-chips"><span class="challenge-chip">Repeated tasks</span><span class="challenge-chip">Missed updates</span><span class="challenge-chip">Hard-to-find files</span></div>
-            <div class="challenge-mess" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          </article>
-          <svg class="challenge-arrow" viewBox="0 0 80 28" fill="none" aria-hidden="true"><path d="M3 14h68M58 3l12 11-12 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <article class="challenge-card">
-            <h3>A clearer way forward</h3>
-            <p>Bring everyday work into a connected, organized space.</p>
-            <div class="challenge-chips"><span class="challenge-chip">Workflows</span><span class="challenge-chip">Team updates</span><span class="challenge-chip">Useful insights</span></div>
-            <div class="challenge-check" aria-hidden="true">✓</div>
-          </article>
-        </div>
-        <p class="challenge-summary reveal">Nexa helps you simplify these processes with powerful, easy-to-use solutions—so your team can focus on the work that matters.</p>
-      </div>
-    </section>
-
-    <section class="section solutions-section" id="solutions" aria-labelledby="solutions-title">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Our solutions</p>
-          <h2 id="solutions-title">Three powerful tools.<br>One connected platform.</h2>
-          <p>Purpose-built tools that help your team bring work, communication, and information together.</p>
-        </div>
-        <div class="solution-grid">
-          <a class="solution-card reveal" href="ServicesB.html#flow">
-            <span class="solution-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M14 3 6 15h6l-1 10 11-14h-7l2-8Z"/></svg></span>
+        <div class="product-cards stagger">
+          <a class="product-card product-card--flow reveal" href="ServicesB.html#flow">
+            <span class="product-icon product-icon--flow"><svg aria-hidden="true"><use href="#nexa-repeat"/></svg></span>
             <h3>Flow</h3>
-            <p>Organize recurring tasks and automate routine administrative processes.</p>
-            <p class="solution-benefit">More time for meaningful work; fewer repetitive tasks.</p>
-            <span class="learn-link">Learn More <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10h14m-6-6 6 6-6 6"/></svg></span>
+            <p>Automate routine work</p>
+            <span class="text-link">Learn more <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></span>
           </a>
-          <a class="solution-card reveal" href="ServicesB.html#connect">
-            <span class="solution-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h13A3.5 3.5 0 0 1 24 6.5v8a3.5 3.5 0 0 1-3.5 3.5H13l-6 5v-5.2A3.5 3.5 0 0 1 4 14.5Z"/><path d="M9 9h10M9 13h7"/></svg></span>
+          <a class="product-card product-card--connect reveal" href="ServicesB.html#connect">
+            <span class="product-icon product-icon--connect"><svg aria-hidden="true"><use href="#nexa-chat"/></svg></span>
             <h3>Connect</h3>
-            <p>Centralize communication, shared information, and team conversations.</p>
-            <p class="solution-benefit">Clearer communication and easier access to information.</p>
-            <span class="learn-link">Learn More <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10h14m-6-6 6 6-6 6"/></svg></span>
+            <p>Keep everyone in the loop</p>
+            <span class="text-link">Learn more <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></span>
           </a>
-          <a class="solution-card reveal" href="ServicesB.html#insight">
-            <span class="solution-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M4 23V5M4 23h21"/><path d="M8 18v-5h4v5M15 18V8h4v10M22 18v-8h3v8"/></svg></span>
+          <a class="product-card product-card--insight reveal" href="ServicesB.html#insight">
+            <span class="product-icon product-icon--insight"><svg aria-hidden="true"><use href="#nexa-trend"/></svg></span>
             <h3>Insight</h3>
-            <p>Turn key business information into clear, easy-to-understand summaries.</p>
-            <p class="solution-benefit">A clearer understanding of operations and more informed decisions.</p>
-            <span class="learn-link">Learn More <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10h14m-6-6 6 6-6 6"/></svg></span>
+            <p>See how the business is doing</p>
+            <span class="text-link">Learn more <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="closing-cta" aria-labelledby="closing-title">
-      <div class="closing-inner reveal">
-        <p class="eyebrow" style="color:#a7c7ff">A clearer way to work</p>
-        <h2 id="closing-title">Ready to simplify your operations?</h2>
-        <p>Discover how Nexa Flow, Connect, and Insight can help your team work smarter, not harder.</p>
-        <a class="button button-light" href="ServicesB.html#solutions">Explore Our Solutions <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+    <div class="container cta-wrap">
+      <section class="cta-band reveal" aria-labelledby="home-cta-title">
+        <h2 id="home-cta-title">Ready to simplify how your team works?</h2>
+        <p>See how Flow, Connect, and Insight fit together to give your team back its time.</p>
+        <a class="button button--citrus" href="ServicesB.html">See the solutions <svg aria-hidden="true"><use href="#nexa-arrow"/></svg></a>
+      </section>
+    </div>
   </main>
   <footer class="site-footer">
-    <a class="brand footer-brand" href="websiteb.html" aria-label="Nexa home"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 31V9l24 22V9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="9" r="3" fill="#885cff"/><circle cx="32" cy="31" r="3" fill="#10b981"/></svg><span>Nexa</span></a>
-    <nav class="footer-links" aria-label="Footer navigation"><a href="websiteb.html" aria-current="page">Home</a><a href="ServicesB.html">Solutions</a><a href="aboutB.html">About</a><a href="index.html">Return to Study</a></nav>
-    <span class="copyright">© 2026 Nexa. All rights reserved.</span>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="websiteb.html" aria-label="Nexa home"><svg class="brand-mark" aria-hidden="true"><use href="#nexa-mark"/></svg><span class="brand-name">nexa</span></a>
+          <p class="footer-description">Connected, accessible tools that make everyday work easier to manage.</p>
+        </div>
+        <div class="footer-group">
+          <h2>Solutions</h2>
+          <nav class="footer-links" aria-label="Solutions footer links"><a href="ServicesB.html#flow">Flow</a><a href="ServicesB.html#connect">Connect</a><a href="ServicesB.html#insight">Insight</a></nav>
+        </div>
+        <div class="footer-group">
+          <h2>Company</h2>
+          <nav class="footer-links" aria-label="Company footer links"><a href="aboutB.html">About Nexa</a><a href="aboutB.html#values">Our values</a></nav>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Nexa. A fictional company.</p><p>Less managing. More meaningful work. · <a href="index.html">Return to study</a></p></div>
+    </div>
   </footer>
-  <script>
-    (() => {
-      const menuButton = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector("#primary-navigation");
-      if (menuButton && navigation) {
-        const closeMenu = () => {
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.setAttribute("aria-label", "Open navigation menu");
-          navigation.classList.remove("is-open");
-        };
-        menuButton.addEventListener("click", () => {
-          const isOpen = menuButton.getAttribute("aria-expanded") !== "true";
-          menuButton.setAttribute("aria-expanded", String(isOpen));
-          menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-          navigation.classList.toggle("is-open", isOpen);
-        });
-        navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
-            closeMenu();
-            menuButton.focus();
-          }
-        });
-      }
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const revealItems = document.querySelectorAll(".reveal");
-      if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-        revealItems.forEach((item) => item.classList.add("is-visible"));
-        return;
-      }
-      document.documentElement.classList.add("js-motion");
-      const observer = new IntersectionObserver((entries, currentObserver) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          currentObserver.unobserve(entry.target);
-        });
-      }, { threshold: .12 });
-      revealItems.forEach((item) => observer.observe(item));
-    })();
-  </script>
 </body>
 </html>

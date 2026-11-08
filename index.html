@@ -16,8 +16,12 @@
     .study-instructions { max-width: 720px; margin: 0; color: #fff; font-size: clamp(1rem, 1.7vw, 1.2rem); line-height: 1.6; text-align: center; }
     .website-selector-buttons { display: flex; align-items: center; justify-content: center; gap: 1rem; }
     .website-selector-button { display: inline-flex; min-width: 150px; min-height: 54px; align-items: center; justify-content: center; padding: .85rem 1.4rem; border: 1px solid #6337ed; border-radius: 999px; color: #fff; background: #6337ed; font: inherit; font-size: 1rem; font-weight: 500; text-decoration: none; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
-    .website-selector-button:hover { transform: translateY(-2px); border-color: #bd49d4; background: #7138e9; }
+    .website-selector-button:hover:not(:disabled) { transform: translateY(-2px); border-color: #bd49d4; background: #7138e9; }
     .website-selector-button:focus-visible { outline: 3px solid #bd49d4; outline-offset: 4px; }
+    .website-selector-button:disabled { border-color: #4a4a4a; color: #b7b7b7; background: #292929; cursor: not-allowed; }
+    .questionnaire-button { border-color: #d63384; background: #d63384; }
+    .questionnaire-button:hover:not(:disabled) { border-color: #e64997; background: #e64997; }
+    .questionnaire-button:disabled { border-color: #8d315f; color: #f0c4d9; background: #642342; cursor: not-allowed; }
     @media (max-width: 560px) {
       .website-selector-buttons { flex-direction: column; width: min(100%, 280px); }
       .website-selector-button { width: 100%; }
@@ -30,7 +34,11 @@
     <nav class="website-selector-buttons" aria-label="Websites">
       <a class="website-selector-button" href="nexahome.html">Website A</a>
       <a class="website-selector-button" href="websiteb.html">Website B</a>
-      <a class="website-selector-button" href="websitec.html">Website C</a>
+    </nav>
+    <nav class="website-selector-buttons" aria-label="Questionnaires">
+      <a class="website-selector-button questionnaire-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdr_Wx98Ra9a5Pmg-S7IUB1_R3qK8skqdbj6IgQmT1y7r7DdA/viewform?usp=dialog">Questionaire A</a>
+      <a class="website-selector-button questionnaire-button" href="https://docs.google.com/forms/d/e/1FAIpQLSc6ngZGvjES706laFRt6X3JFldY8pxfbO3ejZ-8d9dyeb5JYA/viewform?usp=publish-editor">Questionaire B</a>
+      <a class="website-selector-button questionnaire-button" href="https://docs.google.com/forms/d/e/1FAIpQLSc65sG-bV7ooHyTlDTJYvF8GagUoadGUHVL2Z4-RmFvPiuKxQ/viewform?usp=dialog">Final Questionaire</a>
     </nav>
   </main>
 </body>
