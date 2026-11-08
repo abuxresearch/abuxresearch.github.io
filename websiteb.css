@@ -152,6 +152,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-
 .button:hover { background: var(--teal); box-shadow: 0 8px 18px rgba(15, 42, 46, .16); transform: translateY(-2px); }
 .button--citrus { color: var(--ink); background: var(--citrus); }
 .button--citrus:hover { color: var(--ink); background: #dced7a; }
+.footer-bottom .button--citrus { color: #000; }
 .button--outline { border: 1px solid var(--line); color: var(--ink); background: transparent; }
 .button--outline:hover { border-color: var(--ink); color: var(--ink); background: var(--white); }
 .text-link { display: inline-flex; min-height: 38px; align-items: center; gap: .4rem; color: var(--ink); font-size: .76rem; font-weight: 700; text-decoration: none; }
