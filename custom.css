@@ -461,6 +461,14 @@
     .flow-demo-copy p { margin: 0 0 .75rem; font-size: 1.05rem; }
     .flow-demo-copy h2 { margin: 0 0 2rem; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 550; letter-spacing: -.04em; }
     .flow-demo-copy button { display: inline-flex; min-width: 180px; justify-content: center; padding: .8rem 1rem; border: 0; border-radius: 7px; color: #7040eb; background: white; font: inherit; font-size: .9rem; font-weight: 600; cursor: default; }
+    .service-next-section { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin: clamp(3rem, 6vw, 5rem) 0; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; background: rgba(255,255,255,.04); }
+    .service-next-section .section-kicker { margin-bottom: .6rem; }
+    .service-next-section h2 { margin: 0 0 .7rem; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 500; letter-spacing: -.04em; }
+    .service-next-section p:not(.section-kicker) { max-width: 620px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.6; }
+    .service-next-button { display: inline-flex; min-height: 48px; flex: 0 0 auto; align-items: center; justify-content: center; gap: .55rem; padding: .75rem 1rem; border: 0; border-radius: 7px; color: #6337ed; background: #fff; font: inherit; font-size: .9rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+    .service-next-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .service-next-button:focus-visible { outline: 3px solid #b9a5ff; outline-offset: 3px; }
+    .service-next-button .material-symbols-outlined { font-size: 19px; }
     #connect.service-detail, #insight.service-detail { --flow-section-gap: clamp(4rem, 8vw, 7rem); display: block; padding: 0; border: 0; text-align: left; }
     .service-detail[hidden], #flow.service-detail[hidden], #connect.service-detail[hidden], #insight.service-detail[hidden] { display: none; }
     #connect .flow-reveal, #insight .flow-reveal { transition-delay: var(--flow-reveal-delay, 0ms); }
@@ -545,6 +553,8 @@
       .tagline { max-width: none; font-size: clamp(1.35rem, 5.6vw, 2.6rem); }
       .scroll-cue { left: calc(50% - 17px); bottom: 1.25rem; width: 34px; height: 34px; font-size: .875rem; }
       .back-to-top { width: 40px; }
+      .service-next-section { align-items: flex-start; flex-direction: column; gap: 1.25rem; }
+      .service-next-button { width: 100%; }
       .solution-cards { grid-template-columns: 1fr; }
       .pricing-cards { grid-template-columns: 1fr; }
       .pricing-service-select { flex-wrap: wrap; gap: .5rem; }

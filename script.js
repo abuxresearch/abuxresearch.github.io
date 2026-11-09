@@ -274,6 +274,18 @@
     });
   });
 
+  document.querySelectorAll("button.service-next-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextTab = tabs.find((tab) => tab.getAttribute("aria-controls") === button.dataset.serviceTab);
+      if (!nextTab) return;
+      selectTab(nextTab, true);
+      document.querySelector("#service-explorer")?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start"
+      });
+    });
+  });
+
   const requestedService = new URLSearchParams(window.location.search).get("service");
   const initialTab = tabs.find((tab) => tab.getAttribute("aria-controls") === requestedService);
   if (initialTab) selectTab(initialTab);

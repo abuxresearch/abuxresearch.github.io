@@ -34,7 +34,7 @@
     </a>
   </header>
   <main>
-    <section class="services-hero" aria-labelledby="services-title">
+    <section class="services-hero" id="top" aria-labelledby="services-title">
       <canvas class="services-dot-field" aria-hidden="true"></canvas>
       <button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="services-menu"><span>Menu</span><span class="menu-toggle-icon" aria-hidden="true">☰</span></button>
       <p class="section-kicker">Our services</p>
@@ -135,6 +135,14 @@
             <h2 id="flow-demo-title">Let’s simplify things.</h2>
             <button type="button">Book a demo</button>
           </div>
+        </section>
+        <section class="service-next-section" aria-labelledby="flow-next-title">
+          <div>
+            <p class="section-kicker">Keep moving</p>
+            <h2 id="flow-next-title">Bring your team into sync.</h2>
+            <p>See how Nexa Connect keeps conversations and shared information together.</p>
+          </div>
+          <button class="service-next-button" type="button" data-service-tab="connect" aria-controls="connect">Explore NEXA Connect <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
         </section>
       </article>
       <article class="service-detail" id="connect" role="tabpanel" aria-labelledby="service-tab-connect" data-service-name="Nexa Connect" tabindex="0" hidden>
@@ -266,6 +274,14 @@
             <h2 id="connect-demo-title">Bring your team closer.</h2>
             <button type="button">Book a demo</button>
           </div>
+        </section>
+        <section class="service-next-section" aria-labelledby="connect-next-title">
+          <div>
+            <p class="section-kicker">See the bigger picture</p>
+            <h2 id="connect-next-title">Turn team activity into insight.</h2>
+            <p>Explore how Nexa Insight helps make operational information easier to understand.</p>
+          </div>
+          <button class="service-next-button" type="button" data-service-tab="insight" aria-controls="insight">Explore NEXA Insight <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
         </section>
       </article>
       <article class="service-detail" id="insight" role="tabpanel" aria-labelledby="service-tab-insight" data-service-name="Nexa Insight" tabindex="0" hidden>
@@ -445,6 +461,14 @@
             <button type="button">Book a demo</button>
           </div>
         </section>
+        <section class="service-next-section" aria-labelledby="insight-next-title">
+          <div>
+            <p class="section-kicker">Get to know Nexa</p>
+            <h2 id="insight-next-title">Meet the people and purpose behind our work.</h2>
+            <p>Learn more about Nexa, our approach, and how we help teams work with clarity.</p>
+          </div>
+          <a class="service-next-button" href="about.html">About NEXA <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        </section>
       </article>
     </section>
 
@@ -467,5 +491,13 @@
       <a href="about.html" data-close-menu><span>03</span>About<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
     </nav>
   </aside>
+  <a class="back-to-top" href="#top" aria-label="Back to top">
+    <svg class="back-to-top-ring" viewBox="0 0 60 60" aria-hidden="true">
+      <defs><linearGradient id="back-to-top-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4a30ed"/><stop offset="53%" stop-color="#7138e9"/><stop offset="100%" stop-color="#bd49d4"/></linearGradient></defs>
+      <circle class="back-to-top-track" cx="30" cy="30" r="26" />
+      <circle class="back-to-top-progress" cx="30" cy="30" r="26" />
+    </svg>
+    <svg class="back-to-top-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7" /></svg>
+  </a>
 </body>
 </html>
